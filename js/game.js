@@ -18,7 +18,7 @@ function draw(){
         }
     }
 
-    drawSprite(0,x,y);
+    player.draw();
 }
 
 function drawSprite(sprite, x, y){

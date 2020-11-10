@@ -23,12 +23,12 @@
     tileSize = 64;
     numTiles = 9;
     uiWidth = 4;
-    x=y=0;
 
     spritesheet = new Image();
     spritesheet.src = "spritesheet.png";
 
     document.querySelector("html").onkeypress=function(e){
+        let x=y=0;
         if(e.key=="h") x--;
         if(e.key=="j") y++;
         if(e.key=="k") y--;
@@ -37,6 +37,7 @@
         if(e.key=="u") {x++; y--}
         if(e.key=="b") {x--; y++}
         if(e.key=="n") {x++; y++}
+        player.tryMove(x,y);
     }
 
     setInterval(draw, 15);
@@ -45,8 +46,6 @@
 
     generateLevel();
 
-    startingTile = randomPassableTile();
-    x = startingTile.x;
-    y = startingTile.y;
+    player = new Player(randomPassableTile());
 
 </script>

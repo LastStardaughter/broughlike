@@ -18,14 +18,18 @@ function draw(){
         }
     }
 
+    for(let i=0;i<monsters.length;i++){
+        monsters[i].draw();
+    }
+
     player.draw();
 }
 
 function drawSprite(sprite, x, y){
     ctx.drawImage(
         spritesheet,
-        sprite*16,
-        0,
+        (sprite%8)*16,
+        Math.floor(sprite/8)*16,
         16,
         16,
         x*tileSize,
